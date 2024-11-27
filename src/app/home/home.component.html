@@ -1,0 +1,25 @@
+<div class="controls mt-3">
+  <div class="d-flex">
+    <input class="form-control me-2" #filter (input)="filterResults(filter.value)" type="text" placeholder="Filter by city">
+    <!-- <button class="btn btn-primary" (click)="filterResults(filter.value)">Search</button> -->
+  </div>
+</div>
+
+<section class="listing">
+    <div *ngFor="let housingLocation of filteredLocationList" class="card" style="width: 22rem;">
+      <!-- <div *ngFor="let housingLocation of housingLocationList" class="card" style="width: 22rem;"> -->
+        <img [src]="housingLocation?.photo" (error)="this.photoError($event)"  class="card-img-top listing-photo" alt="Exterior photo of {{housingLocation.name}}">
+        <div class="card-body">
+          <h4 class="card-title">{{housingLocation?.name}}</h4>
+          <h5 class="listing-location mb-2 text-body-secondary" >
+            <img src="../assets/location-pin.svg" alt="">{{housingLocation?.city}}, {{housingLocation?.state}}
+          </h5>
+          <p class="card-text">  {{ housingLocation?.description ? (housingLocation.description.slice(0, 70) + (housingLocation.description.length > 70 ? '...' : '')) : '' }}</p>
+          <button [routerLink]="['/details',housingLocation?.id]" class="btn btn-primary">Learn more ></button>
+        </div>
+    </div>
+  </section>
+
+
+
+

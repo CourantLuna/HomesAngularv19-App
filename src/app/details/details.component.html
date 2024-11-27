@@ -1,0 +1,71 @@
+<article class="card">
+  <img [src]="housingLocation?.photo"
+    (error)="this.photoError($event, housingLocation?.name)"
+    class="card-img-top listing-photo">
+  <div class="card-body">
+    <h4 class="card-title listing-heading">{{housingLocation?.name}}</h4>
+    <h5 class="listing-location mb-2 text-body-secondary">
+      <img src="../assets/location-pin.svg" alt>{{housingLocation?.city}},
+      {{housingLocation?.state}}
+    </h5>
+    <p class="card-text">{{housingLocation?.description}}</p>
+
+    <dl class="row">
+      <dt class="col-sm-7">Available Units:</dt>
+      <dd class="col-sm-5">{{ housingLocation?.availableUnits}}</dd>
+      <dt class="col-sm-7">Does this location have wifi:</dt>
+      <dd class="col-sm-5">
+        <span *ngIf="housingLocation?.wifi; else noWifi" class="text-success">✔
+          Yes</span>
+        <ng-template #noWifi>
+          <span class="text-danger"> ✖ No</span>
+        </ng-template>
+      </dd>
+      <dt class="col-sm-7">Does this location have laundry:</dt>
+      <dd class="col-sm-5">
+        <span *ngIf="housingLocation?.laundry; else noLaundry"
+          class="text-success">✔ Yes</span>
+        <ng-template #noLaundry>
+          <span class="text-danger"> ✖ No</span>
+        </ng-template>
+      </dd>
+    </dl>
+
+    <h3>Apply now to live here!</h3>
+
+    <form class="row g-3" [formGroup]="applyForm"
+      (submit)="submitApplication()">
+      <!-- Campo First Name -->
+      <div class="col-md-6">
+        <label for="firts-name" class="form-label">First Name:</label>
+        <input type="text" class="form-control" id="firts-name"
+          formControlName="firstName" placeholder="Enter your first name">
+      </div>
+
+      <!-- Campo Last Name -->
+      <div class="col-md-6">
+        <label for="last-name" class="form-label">Last Name:</label>
+        <input type="text" class="form-control" id="last-name"
+          formControlName="lastName" placeholder="Enter your last name">
+      </div>
+
+      <!-- Campo Email -->
+      <div class="col-md-12">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email"
+          formControlName="email" placeholder="Enter your email">
+      </div>
+
+      <!-- Botón Submit -->
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Apply Now</button>
+      </div>
+    </form>
+  </div>
+
+</article>
+
+<button (click)="goBack()" class="btn btn-outline-primary"><i
+    class="bi bi-arrow-left"></i> Ir Atrás
+
+</button>

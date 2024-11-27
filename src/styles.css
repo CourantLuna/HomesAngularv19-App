@@ -1,0 +1,186 @@
+/* You can add global styles to this file, and also import other style files */
+    /* Estilos para el FAB */
+    .fab-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .fab-button {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-size: 24px; /* Tamaño de los íconos */
+      }
+      .fab-button-light {
+        background-color: #f8f9fa;
+        color: #212529;
+      }
+      .fab-button-dark {
+        background-color: #343a40;
+        color: #f8f9fa;
+      }
+
+/* Tema Oscuro */
+:root[data-bs-theme="dark"] {
+  --bs-primary: #9a77ff; /* Color primario para modo oscuro */
+  --bs-primary-light: #c5b5f5; /* Color más claro */
+  --bs-primary-dark: #7e58c2; /* Color más oscuro */
+  --bs-body-bg: #121212; /* Fondo oscuro */
+  --bs-body-tertiary: #343a40; /* Fondo terciario oscuro */
+  --bs-body-color: #f8f9fa; /* Texto claro */
+  --bs-secondary: #adb5bd; /* Gris claro */
+  --bs-secondary-light: #d6d6d6; /* Gris más claro */
+  --bs-secondary-dark: #6c757d; /* Gris oscuro */
+  --bs-success: #198754; /* Verde para éxito */
+  --bs-danger: #dc3545; /* Rojo para error */
+  --bs-warning: #ffc107; /* Amarillo para advertencias */
+  --bs-info: #0dcaf0; /* Azul para información */
+}
+
+/* Tema Claro */
+:root[data-bs-theme="light"] {
+  --bs-primary: #6610f2; /* Índigo base */
+  --bs-primary-light: #d6bbfc; /* Índigo claro */
+  --bs-primary-dark: #520dc2; /* Índigo oscuro */
+  --bs-body-bg: #f4f1f7; /* Fondo claro general */
+  --bs-body-tertiary: #f8f9fa; /* Fondo terciario claro */
+  --bs-body-color: #212529; /* Texto oscuro */
+  --bs-secondary: #6c757d; /* Gris secundario */
+  --bs-secondary-light: #adb5bd; /* Gris claro */
+  --bs-secondary-dark: #495057; /* Gris oscuro */
+  --bs-success: #28a745; /* Verde éxito */
+  --bs-danger: #dc3545; /* Rojo error */
+  --bs-warning: #ffc107; /* Amarillo advertencia */
+  --bs-info: #17a2b8; /* Azul información */
+}
+
+/* Aplicar colores base al cuerpo */
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+/* Botones Primarios */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #f8f9fa;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary-dark);
+  color: var(--bs-light-text);
+}
+
+.btn-primary:active {
+  background-color: var(--bs-primary-light);
+  border-color: var(--bs-primary-light);
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  background-color: var(--bs-primary-light);
+  border-color: var(--bs-primary-light);
+  color: var(--bs-secondary-light);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Botones Outlined */
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--bs-primary);
+  color: var(--bs-light-text);
+}
+
+.btn-outline-primary:active {
+  background-color: var(--bs-primary-light);
+  border-color: var(--bs-primary-light);
+  color: var(--bs-dark-bg);
+}
+
+.btn-outline-primary:disabled {
+  border-color: var(--bs-secondary-light);
+  color: var(--bs-secondary-light);
+  background-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Fondos */
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+  color: var(--bs-light-text) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bs-secondary) !important;
+  color: var(--bs-light-text) !important;
+}
+
+/* Alertas */
+.alert-primary {
+  background-color: var(--bs-primary-light);
+  border-color: var(--bs-primary);
+  color: var(--bs-dark-bg);
+}
+
+.alert-secondary {
+  background-color: var(--bs-secondary-light);
+  border-color: var(--bs-secondary-dark);
+  color: var(--bs-dark-bg);
+}
+
+/* Bordes */
+.border-primary {
+  border-color: var(--bs-primary) !important;
+}
+
+.border-secondary {
+  border-color: var(--bs-secondary) !important;
+}
+
+/* Sombras para foco */
+.btn:focus,
+.btn:hover {
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.5);
+}
+
+/* Enlaces */
+a {
+  color: var(--bs-primary);
+}
+
+a:hover {
+  color: var(--bs-primary-dark);
+  text-decoration: underline;
+}
+
+/* Contenido de las tablas */
+.table-primary {
+  background-color: var(--bs-primary-light);
+  color: var(--bs-dark-bg);
+}
+
+.table-secondary {
+  background-color: var(--bs-secondary-light);
+  color: var(--bs-dark-bg);
+}

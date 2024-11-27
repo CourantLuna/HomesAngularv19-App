@@ -1,0 +1,37 @@
+.controls{
+  display: grid;
+    grid-template-columns: repeat(auto-fit, 350px);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 350px);
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Espaciado entre filas y columnas */
+    padding: 20px; /* Espaciado interno opcional */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  }
+  
+  .listing-photo {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card{
+    height: 500px;
+  }
+
+  .card-body{
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Los elementos se organizan en columna */
+   justify-content: space-between; /* Espacia el contenido para que el botón esté abajo */
+
+  }
+
+  .btn {
+    align-self: flex-start; /* Alinea el botón a la parte inferior de la tarjeta */
+  }

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>Homes</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
+  <app-root></app-root>
+
+   <!-- Botón flotante -->
+   <div class="fab-container">
+    <!-- Botón para alternar tema (mostrado dinámicamente) -->
+    <button id="theme-toggle" class="fab-button fab-button-light" aria-label="Alternar tema">
+      <span id="theme-icon" class="material-icons">light_mode</span>
+    </button>
+  </div>
+
+  <script>
+    // Referencia al botón y al icono
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
+
+    // Función para alternar el tema
+    function toggleTheme() {
+      const currentTheme = htmlElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlElement.setAttribute('data-bs-theme', newTheme);
+
+      // Cambiar icono y estilo del botón según el nuevo tema
+      if (newTheme === 'light') {
+        themeToggleButton.classList.remove('fab-button-dark');
+        themeToggleButton.classList.add('fab-button-light');
+        themeIcon.textContent = 'light_mode'; // Ícono de sol
+      } else {
+        themeToggleButton.classList.remove('fab-button-light');
+        themeToggleButton.classList.add('fab-button-dark');
+        themeIcon.textContent = 'dark_mode'; // Ícono de luna
+      }
+    }
+
+    // Evento de clic para alternar el tema
+    themeToggleButton.addEventListener('click', toggleTheme);
+  </script>
+
+
+</body>
+</html>
