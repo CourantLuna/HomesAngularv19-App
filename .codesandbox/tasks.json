@@ -1,0 +1,52 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "command": "npm install",
+      "name": "Install Dependencies"
+    },
+    {
+      "command": "json-server --watch",
+      "name": "json-server --watch"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "ng": {
+      "name": "ng",
+      "command": "npm run ng",
+      "runAtStart": false
+    },
+    "start": {
+      "name": "start",
+      "command": "npm run start",
+      "runAtStart": true
+    },
+    "build": {
+      "name": "build",
+      "command": "npm run build",
+      "runAtStart": false
+    },
+    "watch": {
+      "name": "watch",
+      "command": "npm run watch",
+      "runAtStart": false
+    },
+    "test": {
+      "name": "test",
+      "command": "npm run test",
+      "runAtStart": false
+    },
+    "e2e": {
+      "name": "e2e",
+      "command": "npm run e2e",
+      "runAtStart": false
+    },
+    "ng serve": {
+      "name": "ng serve",
+      "command": "ng serve",
+      "runAtStart": true
+    }
+  }
+}
